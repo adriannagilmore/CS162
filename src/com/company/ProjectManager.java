@@ -54,6 +54,10 @@ public class ProjectManager extends Employee {
         this.salary = this.getDoubleBaseSalary();
     }
 
+    /**
+     * Should return the value in salary...but not working properly
+     * @return
+     */
     public double getSalary() {
         return salary;
     }

@@ -23,7 +23,6 @@ public class TechnicalWriter extends Employee {
     /**
      * sets the number of vacation days
      */
-    //@Override
     public void setVacationDays() {
         if(super.getYearsAtCompany() == 1) {
             super.setVacationDays(7);

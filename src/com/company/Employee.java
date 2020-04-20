@@ -43,14 +43,6 @@ public class Employee {
     }
 
     /**
-     * Set the Base Salary
-     * @param baseSalary A variable of type double
-     */
-    //public void setBaseSalary(double baseSalary) {
-        //this.baseSalary = baseSalary;
-   // }
-
-    /**
      * sets the base salary to $50,000.00
      */
     public void setBaseSalary() {
