@@ -16,10 +16,9 @@ public class ProjectManager extends Employee {
      * @param baseSalary A variable of type double
      * @param yearsOfExperience A variable of type int
      * @param yearsAtCompany A variable of type int
-     * @param vacationDays A variable of type int
      */
-    public ProjectManager(String name, double baseSalary, int yearsOfExperience, int yearsAtCompany, int vacationDays) {
-        super(name, baseSalary, yearsOfExperience, yearsAtCompany, vacationDays);
+    public ProjectManager(String name, double baseSalary, int yearsOfExperience, int yearsAtCompany) {
+        super(name, baseSalary, yearsOfExperience, yearsAtCompany);
     }
 
     /**
@@ -38,24 +37,26 @@ public class ProjectManager extends Employee {
     }
 
     /**
-     * Should return a value that is double the base value...but not working properly
+     * Returns a value that is double the base salary
      * @return
      */
     public double getDoubleBaseSalary() {
+        super.setBaseSalary();
         double newSalary = super.getBaseSalary();
-        newSalary = newSalary*2;
+        newSalary *= 2;
         return newSalary;
     }
 
     /**
-     * should set the salary to double the base salary...but not working properly
+     * Sets the value of salary two double the base salary
      */
     public void setSalary() {
         this.salary = this.getDoubleBaseSalary();
+        super.setBaseSalary(salary);
     }
 
     /**
-     * Should return the value in salary...but not working properly
+     * Returns the value of salary
      * @return
      */
     public double getSalary() {
@@ -79,7 +80,7 @@ public class ProjectManager extends Employee {
      */
     @Override
     public String toString() {
-        return "Employee: "+super.getName()+", Salary: "+String.valueOf(this.getSalary())+ ", Motto: "+motto()+", Number of vacation days: "+super.getVacationDays() + ", Number of shares in company stock: " +  this.sharesOfCompanyStock;
+        return super.toString()+"\nNumber of vacation days: "+super.getVacationDays() + "\nNumber of shares in company stock: " +  this.sharesOfCompanyStock+"\n";
     }
 
     /**

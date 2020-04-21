@@ -14,10 +14,9 @@ public class TechnicalWriter extends Employee {
      * @param baseSalary A variable of type double
      * @param yearsOfExperience A variable of type int
      * @param yearsAtCompany A variable of type int
-     * @param vacationDays A variable of type int
      */
-    public TechnicalWriter(String name, double baseSalary, int yearsOfExperience, int yearsAtCompany, int vacationDays) {
-        super(name, baseSalary, yearsOfExperience, yearsAtCompany, vacationDays);
+    public TechnicalWriter(String name, double baseSalary, int yearsOfExperience, int yearsAtCompany) {
+        super(name, baseSalary, yearsOfExperience, yearsAtCompany);
     }
 
     /**
@@ -37,7 +36,7 @@ public class TechnicalWriter extends Employee {
      */
     @Override
     public String toString() {
-        return super.toString()+", Number of vacation days: "+super.getVacationDays();
+        return super.toString()+"\nNumber of vacation days: "+super.getVacationDays()+"\n";
     }
 
     /**

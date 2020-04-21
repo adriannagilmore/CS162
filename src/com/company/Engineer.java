@@ -18,25 +18,28 @@ public class Engineer extends Employee {
      * @param baseSalary a variable of type double
      * @param yearsOfExperience A variable of type int
      * @param yearsAtCompany A variable of type int
-     * @param vacationDays A variable of type int
      */
-    public Engineer(String name, double baseSalary, int yearsOfExperience, int yearsAtCompany, int vacationDays) {
-        super(name, baseSalary, yearsOfExperience, yearsAtCompany, vacationDays);
+    public Engineer(String name, double baseSalary, int yearsOfExperience, int yearsAtCompany) {
+        super(name, baseSalary, yearsOfExperience, yearsAtCompany);
     }
 
     /**
-     * This should set the salary for engineers to 1.5 the base salary...but not working properly
-     */
-    public void setSalary() {
-        this.salary = super.getBaseSalary() * 1.5;
-    }
-
-    /**
-     * Should return the value of salary...but not working properly
+     * Returns a value that is 1.5 times the base salary
      * @return
      */
-    public double getSalary() {
-        return salary;
+    public double getDoubleBaseSalary() {
+        super.setBaseSalary();
+        double newSalary = super.getBaseSalary();
+        newSalary *= 1.5;
+        return newSalary;
+    }
+
+    /**
+     * Sets the value of salary two double the base salary
+     */
+    public void setSalary() {
+        this.salary = this.getDoubleBaseSalary();
+        super.setBaseSalary(salary);
     }
 
     /**
@@ -76,7 +79,7 @@ public class Engineer extends Employee {
      */
     @Override
     public String toString() {
-        return "Employee: "+super.getName()+", Salary: "+String.valueOf(this.getSalary())+ ", Motto: "+motto()+", Number of vacation days: "+super.getVacationDays() + ", Sign on bonus: " +  this.getSignOnBonus();
+        return super.toString()+"\nNumber of vacation days: "+super.getVacationDays() + "\nSign on bonus: " +  this.getSignOnBonus()+"\n";
     }
 
     /**

@@ -12,7 +12,7 @@ public class Employee {
      */
     public Employee(){
         this.name = "";
-        //this.baseSalary = 0;
+        this.baseSalary = 0;
         this.yearsOfExperience = 0;
         this.yearsAtCompany = 0;
         this.vacationDays = 0;
@@ -24,14 +24,12 @@ public class Employee {
      *@param baseSalary A variable of type double
      *@param yearsOfExperience A variable of type int
      *@param yearsAtCompany A variable of type int
-     * @param vacationDays A variable of type int
      */
-    public Employee(String name, double baseSalary, int yearsOfExperience, int yearsAtCompany, int vacationDays){
+    public Employee(String name, double baseSalary, int yearsOfExperience, int yearsAtCompany){
         this.name = name;
         this.baseSalary = baseSalary;
         this.yearsOfExperience =  yearsOfExperience;
         this.yearsAtCompany = yearsAtCompany;
-        this.vacationDays = vacationDays;
     }
 
     /**
@@ -47,6 +45,14 @@ public class Employee {
      */
     public void setBaseSalary() {
         this.baseSalary = 50000.00;
+    }
+
+    /**
+     * Sets the base salary to the value of salary
+     * @param salary A variable of type double
+     */
+    public void setBaseSalary(double salary) {
+        this.baseSalary = salary;
     }
 
     /**
@@ -118,7 +124,7 @@ public class Employee {
      * @return A value of data type String
      */
     public String toString(){
-        return "Employee: "+name+", Salary: "+String.valueOf(getBaseSalary())+ ", Motto: "+motto();
+        return "Employee: "+name+"\nSalary: "+String.valueOf(getBaseSalary())+ "\nMotto: "+motto();
     }
 
     /**
