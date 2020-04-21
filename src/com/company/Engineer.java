@@ -27,7 +27,7 @@ public class Engineer extends Employee {
      * Returns a value that is 1.5 times the base salary
      * @return
      */
-    public double getDoubleBaseSalary() {
+    public double getNewBaseSalary() {
         super.setBaseSalary();
         double newSalary = super.getBaseSalary();
         newSalary *= 1.5;
@@ -38,14 +38,21 @@ public class Engineer extends Employee {
      * Sets the value of salary two double the base salary
      */
     public void setSalary() {
-        this.salary = this.getDoubleBaseSalary();
+        this.salary = this.getNewBaseSalary();
         super.setBaseSalary(salary);
+    }
+
+    /**
+     * Returns the value of salary
+     * @return
+     */
+    public double getSalary() {
+        return salary;
     }
 
     /**
      * sets the number of vacation days
      */
-    //@Override
     public void setVacationDays() {
         if(super.getYearsAtCompany() == 1) {
             super.setVacationDays(14);
